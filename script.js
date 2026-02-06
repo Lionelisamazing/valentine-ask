@@ -15,9 +15,8 @@ const finalText = document.getElementById("final-text");
 // Click Envelope
 
 envelope.addEventListener("click", () => {
-
     music.volume = 0.8;
-    music.play();
+    music.play();  // This will play your jvke.mp3
 
     envelope.style.display = "none";
     letter.style.display = "flex";
@@ -25,8 +24,8 @@ envelope.addEventListener("click", () => {
     setTimeout(() => {
         document.querySelector(".letter-window").classList.add("open");
     }, 50);
-
 });
+;
 
 
 
