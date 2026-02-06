@@ -14,9 +14,9 @@ const finalText = document.getElementById("final-text");
 
 envelope.addEventListener("click", () => {
 
-    // Start YouTube music (allowed because of user click)
+    // Start YouTube video muted (THIS IS REQUIRED)
     ytPlayer.src =
-      "https://www.youtube.com/embed/VVRXyZ6B0Qw?autoplay=1&loop=1&playlist=VVRXyZ6B0Qw";
+      "https://www.youtube.com/embed/VVRXyZ6B0Qw?autoplay=1&mute=1&loop=1&playlist=VVRXyZ6B0Qw";
 
     envelope.style.display = "none";
     letter.style.display = "flex";
@@ -24,7 +24,16 @@ envelope.addEventListener("click", () => {
     setTimeout(() => {
         document.querySelector(".letter-window").classList.add("open");
     }, 50);
+
+    // Try to unmute after a moment
+    setTimeout(() => {
+        ytPlayer.contentWindow?.postMessage(
+          '{"event":"command","func":"unMute","args":""}',
+          '*'
+        );
+    }, 1500);
 });
+
 
 
 // Logic to move the NO btn
