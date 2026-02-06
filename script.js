@@ -1,4 +1,5 @@
 // Elements
+const music = document.getElementById("bg-music");
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
 const noBtn = document.querySelector(".no-btn");
@@ -12,13 +13,17 @@ const finalText = document.getElementById("final-text");
 // Click Envelope
 
 envelope.addEventListener("click", () => {
+    // Play music (allowed because user clicked)
+    music.volume = 0.8;
+    music.play();
+
     envelope.style.display = "none";
     letter.style.display = "flex";
 
-    setTimeout( () => {
+    setTimeout(() => {
         document.querySelector(".letter-window").classList.add("open");
-    },50);
-});
+    }, 50);
+}
 
 // Logic to move the NO btn
 
