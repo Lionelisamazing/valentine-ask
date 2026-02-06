@@ -1,5 +1,5 @@
 // Elements
-const music = document.getElementById("bg-music");
+const ytPlayer = document.getElementById("yt-player");
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
 const noBtn = document.querySelector(".no-btn");
@@ -13,9 +13,10 @@ const finalText = document.getElementById("final-text");
 // Click Envelope
 
 envelope.addEventListener("click", () => {
-    // Play music (allowed because user clicked)
-    music.volume = 0.8;
-    music.play();
+
+    // Start YouTube music (allowed because of user click)
+    ytPlayer.src =
+      "https://www.youtube.com/embed/VVRXyZ6B0Qw?autoplay=1&loop=1&playlist=VVRXyZ6B0Qw";
 
     envelope.style.display = "none";
     letter.style.display = "flex";
@@ -23,7 +24,8 @@ envelope.addEventListener("click", () => {
     setTimeout(() => {
         document.querySelector(".letter-window").classList.add("open");
     }, 50);
-}
+});
+
 
 // Logic to move the NO btn
 
